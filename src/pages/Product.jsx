@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {listProducts} from '../actions/productAction';
+import {productDetails} from '../actions/productAction';
 
 const Product = () => {
   const dispatch = useDispatch();
-  const productList = useSelector(state => state?.productList?.products);
+  const product = useSelector(state => state?.productDetails?.product);
 
-  console.log(productList && productList);
+  console.log(product && product);
   useEffect(() => {
-    dispatch(listProducts());
+    dispatch(productDetails('1'));
   }, [dispatch]);
   return (
     <>
